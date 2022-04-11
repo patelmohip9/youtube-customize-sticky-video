@@ -11,8 +11,8 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps } from '@wordpress/block-editor';
-
+import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import { PanelBody,	TextControl } from "@wordpress/components";
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -29,13 +29,34 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit(props) {
+	const { attributes, setAttributes } 	= props;
+	console.log(attributes.video_id);
 	return (
 		<p {...useBlockProps()}>
-			{__(
-				'Youtube Customize Sticky Video – hello from the editor!',
-				'youtube-customize-sticky-video'
-			)}
+			{
+				<>
+				<InspectorControls>
+					<PanelBody title="Map Data">
+						<TextControl
+							label="Add Youtube Link"
+							value={ attributes.video_id }
+							onChange={(video_id) =>
+								{
+									console.log(video_id);
+									var url = new URL(video_id);
+									var c = url.searchParams.get("v");
+									setAttributes({video_id, c})
+								}
+							}
+						/>
+					</PanelBody>
+				</InspectorControls>
+				<div>
+				<iframe width="420" height="345" src={"https://www.youtube.com/embed/"+attributes.video_id} ></iframe>
+				</div>
+				</>
+			}
 		</p>
 	);
 }

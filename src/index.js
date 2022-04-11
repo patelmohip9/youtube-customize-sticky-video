@@ -29,6 +29,16 @@ registerBlockType('create-block/youtube-customize-sticky-video', {
 	/**
 	 * @see ./edit.js
 	 */
+	 title: 'Youtube Customize Sticky Video',
+	//  description: "Gutenberg Block",
+	//  icon: 'location-alt',
+	 apiVersion: 2,
+	 attributes: {
+		video_id: {
+			 type: "string",
+			 default: 'tgbNymZ7vqY',
+		 },
+	 },
 	edit: Edit,
 	/**
 	 * @see ./save.js
