@@ -31,7 +31,15 @@ import './editor.scss';
  */
 export default function Edit(props) {
 	const { attributes, setAttributes } 	= props;
-	console.log(attributes.video_id);
+
+	const changeVideoId = (videoUrl) => {
+		var url = new URL(videoUrl);
+		var videoID = url.searchParams.get("v");
+		console.log(videoID);
+		setAttributes({
+			video_id: videoID,
+		});
+	}
 	return (
 		<p {...useBlockProps()}>
 			{
@@ -40,15 +48,16 @@ export default function Edit(props) {
 					<PanelBody title="Map Data">
 						<TextControl
 							label="Add Youtube Link"
-							value={ attributes.video_id }
-							onChange={(video_id) =>
-								{
-									console.log(video_id);
-									var url = new URL(video_id);
-									var c = url.searchParams.get("v");
-									setAttributes({video_id, c})
-								}
-							}
+							value={ "https://www.youtube.com/embed/"+attributes.video_id }
+							// onChange={(video_id) =>
+							// 	{
+							// 		console.log(video_id);
+							// 		var url = new URL(video_id);
+							// 		var c = url.searchParams.get("v");
+							// 		setAttributes({video_id, c})
+							// 	}
+							// }
+							onChange={changeVideoId}
 						/>
 					</PanelBody>
 				</InspectorControls>

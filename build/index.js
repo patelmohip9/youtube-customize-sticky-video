@@ -60,21 +60,30 @@ function Edit(props) {
     attributes,
     setAttributes
   } = props;
-  console.log(attributes.video_id);
+
+  const changeVideoId = videoUrl => {
+    var url = new URL(videoUrl);
+    var videoID = url.searchParams.get("v");
+    console.log(videoID);
+    setAttributes({
+      video_id: videoID
+    });
+  };
+
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: "Map Data"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
     label: "Add Youtube Link",
-    value: attributes.video_id,
-    onChange: video_id => {
-      console.log(video_id);
-      var url = new URL(video_id);
-      var c = url.searchParams.get("v");
-      setAttributes({
-        video_id,
-        c
-      });
-    }
+    value: "https://www.youtube.com/embed/" + attributes.video_id // onChange={(video_id) =>
+    // 	{
+    // 		console.log(video_id);
+    // 		var url = new URL(video_id);
+    // 		var c = url.searchParams.get("v");
+    // 		setAttributes({video_id, c})
+    // 	}
+    // }
+    ,
+    onChange: changeVideoId
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
     width: "420",
     height: "345",
