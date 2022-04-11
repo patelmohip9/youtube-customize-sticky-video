@@ -107,32 +107,32 @@ function Edit(props) {
     })
   }), (attributes.video_possion == "tr" || attributes.video_possion == "tl") && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalNumberControl, {
     isShiftStepEnabled: true,
-    onChange: video_possion => setAttributes({
-      video_possion
+    onChange: top => setAttributes({
+      top
     }),
     label: "Top Margin",
     shiftStep: 10,
     value: attributes.top
   }), (attributes.video_possion == "bl" || attributes.video_possion == "tl") && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalNumberControl, {
     isShiftStepEnabled: true,
-    onChange: video_possion => setAttributes({
-      video_possion
+    onChange: left => setAttributes({
+      left
     }),
     label: "Left Margin",
     shiftStep: 10,
     value: attributes.left
   }), (attributes.video_possion == "tr" || attributes.video_possion == "br") && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalNumberControl, {
     isShiftStepEnabled: true,
-    onChange: video_possion => setAttributes({
-      video_possion
+    onChange: right => setAttributes({
+      right
     }),
     label: "Right Margin",
     shiftStep: 10,
     value: attributes.right
   }), (attributes.video_possion == "br" || attributes.video_possion == "bl") && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalNumberControl, {
     isShiftStepEnabled: true,
-    onChange: video_possion => setAttributes({
-      video_possion
+    onChange: bottom => setAttributes({
+      bottom
     }),
     label: "Bottom Margin",
     shiftStep: 10,

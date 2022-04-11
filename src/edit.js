@@ -76,7 +76,7 @@ export default function Edit(props) {
 								(attributes.video_possion == "tr" || attributes.video_possion == "tl" ) &&
 								<NumberControl
 								isShiftStepEnabled={ true }
-								onChange={(video_possion) => setAttributes({video_possion})}
+								onChange={(top) => setAttributes({top})}
 								label="Top Margin"
 								shiftStep={ 10 }
 								value={ attributes.top }
@@ -86,7 +86,7 @@ export default function Edit(props) {
 								(attributes.video_possion == "bl" || attributes.video_possion == "tl" ) &&
 								<NumberControl
 									isShiftStepEnabled={ true }
-									onChange={(video_possion) => setAttributes({video_possion})}
+									onChange={(left) => setAttributes({left})}
 									label="Left Margin"
 									shiftStep={ 10 }
 									value={ attributes.left }
@@ -96,7 +96,7 @@ export default function Edit(props) {
 								(attributes.video_possion == "tr" || attributes.video_possion == "br" ) &&
 								<NumberControl
 									isShiftStepEnabled={ true }
-									onChange={(video_possion) => setAttributes({video_possion})}
+									onChange={(right) => setAttributes({right})}
 									label="Right Margin"
 									shiftStep={ 10 }
 									value={ attributes.right }
@@ -106,7 +106,7 @@ export default function Edit(props) {
 								(attributes.video_possion == "br" || attributes.video_possion == "bl" ) &&
 								<NumberControl
 									isShiftStepEnabled={ true }
-									onChange={(video_possion) => setAttributes({video_possion})}
+									onChange={(bottom) => setAttributes({bottom})}
 									label="Bottom Margin"
 									shiftStep={ 10 }
 									value={ attributes.bottom }

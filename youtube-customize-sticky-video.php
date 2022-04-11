@@ -21,6 +21,84 @@
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function create_block_youtube_customize_sticky_video_block_init() {
-	register_block_type( __DIR__ . '/build' );
+
+	wp_register_style(
+		'ycsv-style-css',
+		plugin_dir_url(__FILE__).'assets/css/min.css',
+		is_admin() ? array('wp-editor') : null,
+		null
+	);
+
+	wp_register_script(
+		'ycsv-jquery-js',
+		'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js',
+		is_admin() ? array('wp-editor') : null,
+		null,
+		false
+	);
+
+	register_block_type( 
+		__DIR__ . '/build',
+		array(
+			'style'           => 'ycsv-style-css',
+			'script'          => 'ycsv-jquery-js',
+			'render_callback' => 'ycsv_render_callback',
+			'attributes'      => array(
+				'video_id'        => array(
+					'type'    => 'string',
+					'default' => 'tgbNymZ7vqY',
+				),
+				'video_possion'        => array(
+					'type'    => 'string',
+					'default' => 'br',
+				),
+				'bottom'        => array(
+					'type'    => 'number',
+					'default' => '10',
+				),
+				'top'        => array(
+					'type'    => 'number',
+					'default' => '10',
+				),
+				'right'        => array(
+					'type'    => 'number',
+					'default' => '10',
+				),
+				'left'        => array(
+					'type'    => 'number',
+					'default' => '10',
+				),
+			),
+		)
+	);
 }
 add_action( 'init', 'create_block_youtube_customize_sticky_video_block_init' );
+
+
+function ycsv_block_scripts() {
+	$data = get_option('ycsv_attributes');
+	wp_enqueue_script(
+		'main-js',
+		plugins_url( 'assets/js/main.js', __FILE__ ),
+		[],
+	);
+	wp_localize_script( 'main-js', 'ycsvObj',
+        array( 
+            'data' => $data,
+        )
+    );
+}
+add_action( 'enqueue_block_assets', 'ycsv_block_scripts' );
+
+function ycsv_render_callback($attributes) {
+	update_option( 'ycsv_attributes', $attributes );
+	ob_start();
+	?>
+		<div class="video-wrap">
+			<div class="video">
+				<iframe width="600" height="400" src="https://www.youtube.com/embed/<?php esc_attr_e( $attributes['video_id'] ); ?>" ></iframe>
+			</div>
+		</div>
+	<?php
+	return ob_get_clean();
+}
