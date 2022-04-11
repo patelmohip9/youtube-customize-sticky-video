@@ -24,7 +24,7 @@ function create_block_youtube_customize_sticky_video_block_init() {
 
 	wp_register_style(
 		'ycsv-style-css',
-		plugin_dir_url(__FILE__).'assets/css/min.css',
+		plugin_dir_url(__FILE__).'assets/css/main.css',
 		is_admin() ? array('wp-editor') : null,
 		null
 	);
