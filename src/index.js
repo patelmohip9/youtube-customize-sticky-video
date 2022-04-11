@@ -38,6 +38,26 @@ registerBlockType('create-block/youtube-customize-sticky-video', {
 			 type: "string",
 			 default: 'tgbNymZ7vqY',
 		 },
+		video_possion: {
+			 type: "string",
+			 default: 'br',
+		 },
+		bottom: {
+			 type: "number",
+			 default: '10',
+		 },
+		top: {
+			 type: "number",
+			 default: '10',
+		 },
+		right: {
+			 type: "number",
+			 default: '10',
+		 },
+		left: {
+			 type: "number",
+			 default: '10',
+		 },
 	 },
 	edit: Edit,
 	/**

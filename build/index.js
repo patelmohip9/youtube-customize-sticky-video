@@ -71,7 +71,7 @@ function Edit(props) {
   };
 
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: "Map Data"
+    title: "Youtube Link"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
     label: "Add Youtube Link",
     value: "https://www.youtube.com/embed/" + attributes.video_id // onChange={(video_id) =>
@@ -84,6 +84,59 @@ function Edit(props) {
     // }
     ,
     onChange: changeVideoId
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: "On Scroll Settings"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+    label: "Video possion on scroll",
+    value: attributes.video_possion,
+    options: [{
+      label: 'Top-Right',
+      value: 'tr'
+    }, {
+      label: 'Top-Left',
+      value: 'tl'
+    }, {
+      label: 'Bottom-Right',
+      value: 'br'
+    }, {
+      label: 'Bottom-Left',
+      value: 'bl'
+    }],
+    onChange: video_possion => setAttributes({
+      video_possion
+    })
+  }), (attributes.video_possion == "tr" || attributes.video_possion == "tl") && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalNumberControl, {
+    isShiftStepEnabled: true,
+    onChange: video_possion => setAttributes({
+      video_possion
+    }),
+    label: "Top Margin",
+    shiftStep: 10,
+    value: attributes.top
+  }), (attributes.video_possion == "bl" || attributes.video_possion == "tl") && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalNumberControl, {
+    isShiftStepEnabled: true,
+    onChange: video_possion => setAttributes({
+      video_possion
+    }),
+    label: "Left Margin",
+    shiftStep: 10,
+    value: attributes.left
+  }), (attributes.video_possion == "tr" || attributes.video_possion == "br") && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalNumberControl, {
+    isShiftStepEnabled: true,
+    onChange: video_possion => setAttributes({
+      video_possion
+    }),
+    label: "Right Margin",
+    shiftStep: 10,
+    value: attributes.right
+  }), (attributes.video_possion == "br" || attributes.video_possion == "bl") && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalNumberControl, {
+    isShiftStepEnabled: true,
+    onChange: video_possion => setAttributes({
+      video_possion
+    }),
+    label: "Bottom Margin",
+    shiftStep: 10,
+    value: attributes.bottom
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
     width: "420",
     height: "345",
@@ -144,6 +197,26 @@ __webpack_require__.r(__webpack_exports__);
     video_id: {
       type: "string",
       default: 'tgbNymZ7vqY'
+    },
+    video_possion: {
+      type: "string",
+      default: 'br'
+    },
+    bottom: {
+      type: "number",
+      default: '10'
+    },
+    top: {
+      type: "number",
+      default: '10'
+    },
+    right: {
+      type: "number",
+      default: '10'
+    },
+    left: {
+      type: "number",
+      default: '10'
     }
   },
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],

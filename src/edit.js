@@ -12,7 +12,7 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
-import { PanelBody,	TextControl } from "@wordpress/components";
+import { PanelBody,	TextControl, SelectControl, __experimentalNumberControl as NumberControl } from "@wordpress/components";
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -45,7 +45,7 @@ export default function Edit(props) {
 			{
 				<>
 				<InspectorControls>
-					<PanelBody title="Map Data">
+					<PanelBody title="Youtube Link">
 						<TextControl
 							label="Add Youtube Link"
 							value={ "https://www.youtube.com/embed/"+attributes.video_id }
@@ -59,6 +59,59 @@ export default function Edit(props) {
 							// }
 							onChange={changeVideoId}
 						/>
+					</PanelBody>
+					<PanelBody title="On Scroll Settings">
+						<SelectControl
+								label="Video possion on scroll"
+								value={attributes.video_possion}
+								options={[
+									{ label: 'Top-Right', value: 'tr' },
+									{ label: 'Top-Left', value: 'tl' },
+									{ label: 'Bottom-Right', value: 'br' },
+									{ label: 'Bottom-Left', value: 'bl' },
+								]}
+								onChange={(video_possion) => setAttributes({video_possion})}
+							/>
+							{
+								(attributes.video_possion == "tr" || attributes.video_possion == "tl" ) &&
+								<NumberControl
+								isShiftStepEnabled={ true }
+								onChange={(video_possion) => setAttributes({video_possion})}
+								label="Top Margin"
+								shiftStep={ 10 }
+								value={ attributes.top }
+								/>
+							}
+							{
+								(attributes.video_possion == "bl" || attributes.video_possion == "tl" ) &&
+								<NumberControl
+									isShiftStepEnabled={ true }
+									onChange={(video_possion) => setAttributes({video_possion})}
+									label="Left Margin"
+									shiftStep={ 10 }
+									value={ attributes.left }
+								/>
+							}	
+							{
+								(attributes.video_possion == "tr" || attributes.video_possion == "br" ) &&
+								<NumberControl
+									isShiftStepEnabled={ true }
+									onChange={(video_possion) => setAttributes({video_possion})}
+									label="Right Margin"
+									shiftStep={ 10 }
+									value={ attributes.right }
+								/>
+							}
+							{
+								(attributes.video_possion == "br" || attributes.video_possion == "bl" ) &&
+								<NumberControl
+									isShiftStepEnabled={ true }
+									onChange={(video_possion) => setAttributes({video_possion})}
+									label="Bottom Margin"
+									shiftStep={ 10 }
+									value={ attributes.bottom }
+								/>
+							}
 					</PanelBody>
 				</InspectorControls>
 				<div>
