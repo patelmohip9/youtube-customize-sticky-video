@@ -42,7 +42,7 @@ registerBlockType('create-block/youtube-customize-sticky-video', {
 	 attributes: {
 		video_id: {
 			 type: "string",
-			 default: 'tgbNymZ7vqY',
+			 default: 'XvEG9XWD4JI',
 		 },
 		video_possion: {
 			 type: "string",
