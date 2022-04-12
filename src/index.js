@@ -29,7 +29,7 @@ registerBlockType('create-block/youtube-customize-sticky-video', {
 	/**
 	 * @see ./edit.js
 	 */
-	 title: 'Youtube Customize Sticky Video',
+	 title: 'Youtube Sticky Video',
 	 description: "Gutenberg block to adjust sticky video on frontend side",
 	 icon: 'video-alt3',
 	 apiVersion: 2,

@@ -203,7 +203,7 @@ __webpack_require__.r(__webpack_exports__);
   /**
    * @see ./edit.js
    */
-  title: 'Youtube Customize Sticky Video',
+  title: 'Youtube Sticky Video',
   description: "Gutenberg block to adjust sticky video on frontend side",
   icon: 'video-alt3',
   apiVersion: 2,
@@ -524,7 +524,7 @@ module.exports = window["wp"]["i18n"];
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkyoutube_customize_sticky_video"] = self["webpackChunkyoutube_customize_sticky_video"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkyoutube_sticky_video"] = self["webpackChunkyoutube_sticky_video"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	}();

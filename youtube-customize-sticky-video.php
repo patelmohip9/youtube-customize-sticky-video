@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name:       Youtube Customize Sticky Video
- * Description:       Example static block scaffolded with Create Block tool.
+ * Plugin Name:       Youtube Sticky Video
+ * Description:       Gutenberg block to adjust sticky video on frontend side.
  * Requires at least: 5.8
  * Requires PHP:      7.0
- * Version:           0.1.0
+ * Version:           1.0.0
  * Author:                        <a href="https://profiles.wordpress.org/patelmohip/">Mohip Patel</a> | <a href="https://profiles.wordpress.org/haritpanchal/">Harit Panchal</a>
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
