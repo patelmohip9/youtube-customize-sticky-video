@@ -8,18 +8,11 @@
  * Author:                        <a href="https://profiles.wordpress.org/patelmohip/">Mohip Patel</a> | <a href="https://profiles.wordpress.org/haritpanchal/">Harit Panchal</a>
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       youtube-customize-sticky-video
+ * Text Domain:       youtube-sticky-video
  *
  * @package           create-block
  */
 
-/**
- * Registers the block using the metadata loaded from the `block.json` file.
- * Behind the scenes, it registers also all assets so they can be enqueued
- * through the block editor in the corresponding context.
- *
- * @see https://developer.wordpress.org/reference/functions/register_block_type/
- */
 function create_block_youtube_customize_sticky_video_block_init() {
 
 	wp_register_style(
@@ -46,7 +39,7 @@ function create_block_youtube_customize_sticky_video_block_init() {
 			'attributes'      => array(
 				'video_id'        => array(
 					'type'    => 'string',
-					'default' => 'tgbNymZ7vqY',
+					'default' => 'XvEG9XWD4JI',
 				),
 				'video_possion'        => array(
 					'type'    => 'string',
@@ -73,7 +66,6 @@ function create_block_youtube_customize_sticky_video_block_init() {
 	);
 }
 add_action( 'init', 'create_block_youtube_customize_sticky_video_block_init' );
-
 
 function ycsv_block_scripts() {
 	$data = get_option('ycsv_attributes');

@@ -33,13 +33,6 @@
 
 .video.no-stuck {
     position: unset !important;
-    /* bottom: 5px;
-    right: 20px;
-    width: 450px;
-    height: 250px !important;
-    transform: translateY(100%);
-    animation: fade-in-up 0.75s ease forwards;
-    z-index: 1; */
 }
 
 .btn_close {
