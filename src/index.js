@@ -33,6 +33,12 @@ registerBlockType('create-block/youtube-customize-sticky-video', {
 	//  description: "Gutenberg Block",
 	//  icon: 'location-alt',
 	 apiVersion: 2,
+
+	 supports: {
+		// Use the block just once per post
+		multiple: false
+	},
+
 	 attributes: {
 		video_id: {
 			 type: "string",

@@ -96,7 +96,7 @@ function ycsv_render_callback($attributes) {
 	?>
 		<div class="video-wrap">
 			<div class="video">
-				<iframe width="600" height="400" src="https://www.youtube.com/embed/<?php esc_attr_e( $attributes['video_id'] ); ?>" ></iframe>
+				<iframe src="https://www.youtube.com/embed/<?php esc_attr_e( $attributes['video_id'] ); ?>" ></iframe>
 			</div>
 		</div>
 	<?php

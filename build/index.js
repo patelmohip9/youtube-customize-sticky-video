@@ -193,6 +193,10 @@ __webpack_require__.r(__webpack_exports__);
   //  description: "Gutenberg Block",
   //  icon: 'location-alt',
   apiVersion: 2,
+  supports: {
+    // Use the block just once per post
+    multiple: false
+  },
   attributes: {
     video_id: {
       type: "string",
