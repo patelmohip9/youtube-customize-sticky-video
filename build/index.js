@@ -204,8 +204,8 @@ __webpack_require__.r(__webpack_exports__);
    * @see ./edit.js
    */
   title: 'Youtube Customize Sticky Video',
-  //  description: "Gutenberg Block",
-  //  icon: 'location-alt',
+  description: "Gutenberg block to adjust sticky video on frontend side",
+  icon: 'video-alt3',
   apiVersion: 2,
   supports: {
     // Use the block just once per post
