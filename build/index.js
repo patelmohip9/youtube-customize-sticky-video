@@ -64,7 +64,6 @@ function Edit(props) {
   const changeVideoId = videoUrl => {
     var url = new URL(videoUrl);
     var videoID = url.searchParams.get("v");
-    console.log(videoID);
     setAttributes({
       video_id: videoID
     });
@@ -74,20 +73,19 @@ function Edit(props) {
     title: "Youtube Link"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
     label: "Add Youtube Link",
-    value: "https://www.youtube.com/embed/" + attributes.video_id // onChange={(video_id) =>
-    // 	{
-    // 		console.log(video_id);
-    // 		var url = new URL(video_id);
-    // 		var c = url.searchParams.get("v");
-    // 		setAttributes({video_id, c})
-    // 	}
-    // }
-    ,
+    value: "https://www.youtube.com/embed/" + attributes.video_id,
     onChange: changeVideoId
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: "On Scroll Settings"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    style: {
+      paddingBottom: '4px'
+    }
+  }, "Video possion on scroll"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      marginBottom: '15px'
+    }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: "Video possion on scroll",
     value: attributes.video_possion,
     options: [{
       label: 'Top-Right',
@@ -105,7 +103,11 @@ function Edit(props) {
     onChange: video_possion => setAttributes({
       video_possion
     })
-  }), (attributes.video_possion == "tr" || attributes.video_possion == "tl") && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalNumberControl, {
+  })), (attributes.video_possion == "tr" || attributes.video_possion == "tl") && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      marginBottom: '10px'
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalNumberControl, {
     isShiftStepEnabled: true,
     onChange: top => setAttributes({
       top
@@ -113,7 +115,11 @@ function Edit(props) {
     label: "Top Margin",
     shiftStep: 10,
     value: attributes.top
-  }), (attributes.video_possion == "bl" || attributes.video_possion == "tl") && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalNumberControl, {
+  })), (attributes.video_possion == "bl" || attributes.video_possion == "tl") && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      marginBottom: '10px'
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalNumberControl, {
     isShiftStepEnabled: true,
     onChange: left => setAttributes({
       left
@@ -121,7 +127,11 @@ function Edit(props) {
     label: "Left Margin",
     shiftStep: 10,
     value: attributes.left
-  }), (attributes.video_possion == "tr" || attributes.video_possion == "br") && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalNumberControl, {
+  })), (attributes.video_possion == "tr" || attributes.video_possion == "br") && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      marginBottom: '10px'
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalNumberControl, {
     isShiftStepEnabled: true,
     onChange: right => setAttributes({
       right
@@ -129,7 +139,11 @@ function Edit(props) {
     label: "Right Margin",
     shiftStep: 10,
     value: attributes.right
-  }), (attributes.video_possion == "br" || attributes.video_possion == "bl") && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalNumberControl, {
+  })), (attributes.video_possion == "br" || attributes.video_possion == "bl") && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    style: {
+      marginBottom: '10px'
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalNumberControl, {
     isShiftStepEnabled: true,
     onChange: bottom => setAttributes({
       bottom
@@ -137,7 +151,7 @@ function Edit(props) {
     label: "Bottom Margin",
     shiftStep: 10,
     value: attributes.bottom
-  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
+  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
     width: "420",
     height: "345",
     src: "https://www.youtube.com/embed/" + attributes.video_id

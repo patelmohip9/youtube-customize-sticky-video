@@ -1,5 +1,3 @@
-console.log(ycsvObj.data);
-
 jQuery(document).ready(function(){
   var videoData = ycsvObj.data;
   var $window = jQuery(window);
@@ -7,16 +5,10 @@ jQuery(document).ready(function(){
   var $video = jQuery('.video');
   var videoHeight = $video.outerHeight();
   
-  $window.on('scroll',  function() {
+  $window.on('scroll',  function(e) {
     var windowScrollTop = $window.scrollTop();
     var videoBottom = videoHeight + $videoWrap.offset().top;
-    if (windowScrollTop > videoBottom) {
-      $videoWrap.height(videoHeight);
-      $video.addClass('stuck');
-    } else {
-      $videoWrap.height('auto');
-      $video.removeClass('stuck');
-    }
+
     if (videoData.video_possion == 'br'  || videoData.video_possion == 'bl') {
       $(".stuck").css("bottom", videoData.bottom+'px');
     }
@@ -29,6 +21,38 @@ jQuery(document).ready(function(){
     if (videoData.video_possion == 'tr'  || videoData.video_possion == 'tl') {
       $(".stuck").css("top", videoData.top+'px');
     }
-  });
 
+    if (videoData.video_possion == 'tr'  || videoData.video_possion == 'tl'){
+      $(".down").css('display', "block");
+      if(videoData.video_possion == 'tr'){
+        $(".down").css('float', "right");
+      }
+      if(videoData.video_possion == 'tl'){
+        $(".down").css('float', "left");
+      }
+    }
+    if (videoData.video_possion == 'br'  || videoData.video_possion == 'bl'){
+      $(".up").css('display', "block");
+      if(videoData.video_possion == 'br'){
+        $(".up").css('float', "right");
+      }
+      if(videoData.video_possion == 'bl'){
+        $(".up").css('float', "left");
+      }
+    }
+    
+    if (windowScrollTop > videoBottom) {
+      $videoWrap.height(videoHeight);
+      $video.addClass('stuck');
+    } else {
+      $videoWrap.height('auto');
+      $video.removeClass('stuck');
+      $(".btn_close").css('display', "none");
+    }
+  });
+  
+  $(".btn_close").on('click', function(){
+    $videoWrap.height('auto');
+    $video.addClass('no-stuck').removeClass('stuck');
+  })
 })

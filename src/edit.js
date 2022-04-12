@@ -35,7 +35,6 @@ export default function Edit(props) {
 	const changeVideoId = (videoUrl) => {
 		var url = new URL(videoUrl);
 		var videoID = url.searchParams.get("v");
-		console.log(videoID);
 		setAttributes({
 			video_id: videoID,
 		});
@@ -49,68 +48,70 @@ export default function Edit(props) {
 						<TextControl
 							label="Add Youtube Link"
 							value={ "https://www.youtube.com/embed/"+attributes.video_id }
-							// onChange={(video_id) =>
-							// 	{
-							// 		console.log(video_id);
-							// 		var url = new URL(video_id);
-							// 		var c = url.searchParams.get("v");
-							// 		setAttributes({video_id, c})
-							// 	}
-							// }
-							onChange={changeVideoId}
+ 							onChange={changeVideoId}
 						/>
 					</PanelBody>
 					<PanelBody title="On Scroll Settings">
-						<SelectControl
-								label="Video possion on scroll"
-								value={attributes.video_possion}
-								options={[
-									{ label: 'Top-Right', value: 'tr' },
-									{ label: 'Top-Left', value: 'tl' },
-									{ label: 'Bottom-Right', value: 'br' },
-									{ label: 'Bottom-Left', value: 'bl' },
-								]}
-								onChange={(video_possion) => setAttributes({video_possion})}
-							/>
+						<span style={{paddingBottom:'4px'}}>Video possion on scroll</span>
+							<div style={{marginBottom:'15px'}}>
+								<SelectControl
+									value={attributes.video_possion}
+									options={[
+										{ label: 'Top-Right', value: 'tr' },
+										{ label: 'Top-Left', value: 'tl' },
+										{ label: 'Bottom-Right', value: 'br' },
+										{ label: 'Bottom-Left', value: 'bl' },
+									]}
+									onChange={(video_possion) => setAttributes({video_possion})}
+								/>
+							</div>
 							{
 								(attributes.video_possion == "tr" || attributes.video_possion == "tl" ) &&
-								<NumberControl
-								isShiftStepEnabled={ true }
-								onChange={(top) => setAttributes({top})}
-								label="Top Margin"
-								shiftStep={ 10 }
-								value={ attributes.top }
-								/>
+								<div style={{marginBottom:'10px'}}>
+									<NumberControl
+									isShiftStepEnabled={ true }
+									onChange={(top) => setAttributes({top})}
+									label="Top Margin"
+									shiftStep={ 10 }
+									value={ attributes.top }
+									/>
+								</div>
 							}
 							{
 								(attributes.video_possion == "bl" || attributes.video_possion == "tl" ) &&
-								<NumberControl
-									isShiftStepEnabled={ true }
-									onChange={(left) => setAttributes({left})}
-									label="Left Margin"
-									shiftStep={ 10 }
-									value={ attributes.left }
-								/>
+								<div style={{marginBottom:'10px'}}>
+									<NumberControl
+										isShiftStepEnabled={ true }
+										onChange={(left) => setAttributes({left})}
+										label="Left Margin"
+										shiftStep={ 10 }
+										value={ attributes.left }
+									/>
+								</div>
 							}	
 							{
 								(attributes.video_possion == "tr" || attributes.video_possion == "br" ) &&
-								<NumberControl
-									isShiftStepEnabled={ true }
-									onChange={(right) => setAttributes({right})}
-									label="Right Margin"
-									shiftStep={ 10 }
-									value={ attributes.right }
-								/>
+								<div style={{marginBottom:'10px'}}>
+									<NumberControl
+										isShiftStepEnabled={ true }
+										onChange={(right) => setAttributes({right})}
+										label="Right Margin"
+										shiftStep={ 10 }
+										value={ attributes.right }
+									/>
+								</div>
 							}
 							{
 								(attributes.video_possion == "br" || attributes.video_possion == "bl" ) &&
-								<NumberControl
-									isShiftStepEnabled={ true }
-									onChange={(bottom) => setAttributes({bottom})}
-									label="Bottom Margin"
-									shiftStep={ 10 }
-									value={ attributes.bottom }
-								/>
+								<div style={{marginBottom:'10px'}}>
+									<NumberControl
+										isShiftStepEnabled={ true }
+										onChange={(bottom) => setAttributes({bottom})}
+										label="Bottom Margin"
+										shiftStep={ 10 }
+										value={ attributes.bottom }
+									/>
+								</div>
 							}
 					</PanelBody>
 				</InspectorControls>
