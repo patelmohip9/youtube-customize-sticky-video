@@ -25,6 +25,7 @@ import save from './save';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
+console.log('gb indexxxx');
 registerBlockType('create-block/youtube-customize-sticky-video', {
 	/**
 	 * @see ./edit.js
@@ -35,7 +36,6 @@ registerBlockType('create-block/youtube-customize-sticky-video', {
 	 apiVersion: 2,
 
 	 supports: {
-		// Use the block just once per post
 		multiple: false
 	},
 

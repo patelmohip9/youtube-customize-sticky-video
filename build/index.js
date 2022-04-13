@@ -199,6 +199,7 @@ __webpack_require__.r(__webpack_exports__);
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 
+console.log('gb indexxxx');
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)('create-block/youtube-customize-sticky-video', {
   /**
    * @see ./edit.js
@@ -208,7 +209,6 @@ __webpack_require__.r(__webpack_exports__);
   icon: 'video-alt3',
   apiVersion: 2,
   supports: {
-    // Use the block just once per post
     multiple: false
   },
   attributes: {
