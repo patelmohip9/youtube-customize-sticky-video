@@ -34,7 +34,7 @@ class YSV_Loader {
         );
     
         register_block_type( 
-            __DIR__ . '/build',
+            'create-block/youtube-customize-sticky-video',
             array(
                 'style'           => 'ysv-style-css',
                 'script'          => 'ysv-jquery-js',
@@ -102,5 +102,5 @@ class YSV_Loader {
 
 
 if( class_exists('YSV_Loader') ){
-	$SvyoOption = new YSV_Loader();
+	$ysv_class = new YSV_Loader();
 }
