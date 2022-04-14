@@ -89,9 +89,9 @@ class YSV_Loader {
         ?>
             <div class="video-wrap">
                 <div class="video">
-                    <img class="btn_close up" src="<?php echo esc_url( plugins_url( '/assets/images/close-button.png', __FILE__ ) ) ?>" />
+                    <!-- <img class="btn_close up" src="<?php //echo esc_url( plugins_url( '/assets/images/close-button.png', __FILE__ ) ) ?>" /> -->
                     <iframe src="https://www.youtube.com/embed/<?php esc_attr_e( $attributes['video_id'] ); ?>" ></iframe>
-                    <img class="btn_close down" src="<?php echo esc_url( plugins_url( '/assets/images/close-button.png', __FILE__ ) ) ?>" />
+                    <!-- <img class="btn_close down" src="<?php //echo esc_url( plugins_url( '/assets/images/close-button.png', __FILE__ ) ) ?>" /> -->
                 </div>
             </div>
         <?php
