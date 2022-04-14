@@ -34,11 +34,11 @@ class YSV_Loader {
         );
     
         register_block_type( 
-            'create-block/youtube-customize-sticky-video',
+            plugin_dir_path(__DIR__).'/build',
             array(
                 'style'           => 'ysv-style-css',
                 'script'          => 'ysv-jquery-js',
-                'render_callback' => 'ysv_render_callback',
+                'render_callback' => array($this,'ysv_render_callback'),
                 'attributes'      => array(
                     'video_id'        => array(
                         'type'    => 'string',
