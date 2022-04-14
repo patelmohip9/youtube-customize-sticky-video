@@ -2,20 +2,37 @@
 /**
  * YSV Loader.
  *
- * @package YSV
+ * @package YoutubeStickyVideo
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+/**
+ * Youtube sticky video register block and rander callback.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
 class YSV_Loader {
 
+    /**
+	 * Add actions.
+	 */
     public function __construct(){
         add_action( 'init', array($this,'create_block_youtube_customize_sticky_video_block_init') );
         add_action( 'enqueue_block_assets', array($this,'ysv_block_scripts'), 10 );
 	}
 
+    /**
+	 * Youtube sticky video register block.
+     *
+     * @since 1.0.0
+     *
+     * @return void
+	 */
     function create_block_youtube_customize_sticky_video_block_init() {
         
         wp_register_style(
@@ -40,7 +57,7 @@ class YSV_Loader {
             array(
                 'style'           => 'ysv-style-css',
                 'script'          => 'ysv-jquery-js',
-                'render_callback' => array($this,'ysv_render_callback'),
+                'render_callback' => array( $this,'ysv_render_callback' ),
                 'attributes'      => array(
                     'video_id'        => array(
                         'type'    => 'string',
@@ -71,8 +88,15 @@ class YSV_Loader {
         );
     }
     
+     /**
+	 * Youtube sticky video enqueue script
+     * 
+     * @since 1.0.0
+     *
+     * @return void
+	 */
     function ysv_block_scripts() {
-        $data = get_option('ysv_attributes');
+        $data = get_option( 'ysv_attributes' );
         wp_enqueue_script(
             'main-js',
             plugins_url( '/assets/js/main.js', __FILE__ ),
@@ -87,7 +111,14 @@ class YSV_Loader {
         );
     }
     
-    function ysv_render_callback($attributes) {
+    /**
+	 * Youtube sticky video callback function for display youtube video and on scroll effect.
+     *
+     * @since 1.0.0
+     *
+     * @return void
+	 */
+    function ysv_render_callback( $attributes ) {
         update_option( 'ysv_attributes', $attributes );
         ob_start();
         ?>
@@ -104,7 +135,6 @@ class YSV_Loader {
 
 }
 
-
-if( class_exists('YSV_Loader') ){
+if( class_exists( 'YSV_Loader' ) ){
 	$ysv_class = new YSV_Loader();
 }
