@@ -69,3 +69,4 @@ registerBlockType('create-block/youtube-customize-sticky-video', {
 	 */
 	save,
 });
+true

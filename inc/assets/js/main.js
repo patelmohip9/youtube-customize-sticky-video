@@ -1,4 +1,3 @@
-console.log('hiiiiiii');
 jQuery(document).ready(function(){
   var videoData = ysvObj.data;
   var $window = jQuery(window);
@@ -52,8 +51,8 @@ jQuery(document).ready(function(){
     }
   });
   
-  // $(".btn_close").on('click', function(){
-  //   $videoWrap.height('auto');
-  //   $video.addClass('no-stuck').removeClass('stuck');
-  // })
+  $(".btn_close").on('click', function(){
+    $videoWrap.height('auto');
+    $video.addClass('no-stuck').removeClass('stuck');
+  })
 })
