@@ -24,14 +24,16 @@ class YSV_Loader {
             is_admin() ? array('wp-editor') : null,
             null
         );
-    
-        wp_register_script(
-            'ysv-jquery-js',
-            'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js',
-            is_admin() ? array('wp-editor') : null,
-            null,
-            false
-        );
+        
+        if ( ! wp_script_is( 'jquery', 'enqueued' )) {
+            wp_register_script(
+                'ysv-jquery-js',
+                'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js',
+                is_admin() ? array('wp-editor') : null,
+                null,
+                false
+            );
+        }
     
         register_block_type( 
             plugin_dir_path(__DIR__).'/build',
@@ -75,6 +77,8 @@ class YSV_Loader {
             'main-js',
             plugins_url( '/assets/js/main.js', __FILE__ ),
             [],
+            '',
+            true
         );
         wp_localize_script( 'main-js', 'ysvObj',
             array( 
