@@ -10,7 +10,7 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       youtube-sticky-video
  *
- * @package           create-block
+ * @package           YoutubeStickyVideo
  */
 
 if ( ! version_compare( PHP_VERSION, '5.0', '>=' ) ) {
