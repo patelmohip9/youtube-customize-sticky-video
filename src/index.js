@@ -18,7 +18,6 @@ import './style.scss';
  * Internal dependencies
  */
 import Edit from './edit';
-import save from './save';
 
 /**
  * Every block starts by registering a new block type definition.
@@ -35,7 +34,6 @@ registerBlockType('create-block/youtube-customize-sticky-video', {
 	 apiVersion: 2,
 
 	 supports: {
-		// Use the block just once per post
 		multiple: false
 	},
 
@@ -71,3 +69,4 @@ registerBlockType('create-block/youtube-customize-sticky-video', {
 	 */
 	save,
 });
+true

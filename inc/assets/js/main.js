@@ -1,5 +1,5 @@
 jQuery(document).ready(function(){
-  var videoData = ycsvObj.data;
+  var videoData = ysvObj.data;
   var $window = jQuery(window);
   var $videoWrap = jQuery('.video-wrap');
   var $video = jQuery('.video');
@@ -22,24 +22,24 @@ jQuery(document).ready(function(){
       $(".stuck").css("top", videoData.top+'px');
     }
 
-    if (videoData.video_possion == 'tr'  || videoData.video_possion == 'tl'){
-      $(".down").css('display', "block");
-      if(videoData.video_possion == 'tr'){
-        $(".down").css('float', "right");
-      }
-      if(videoData.video_possion == 'tl'){
-        $(".down").css('float', "left");
-      }
-    }
-    if (videoData.video_possion == 'br'  || videoData.video_possion == 'bl'){
-      $(".up").css('display', "block");
-      if(videoData.video_possion == 'br'){
-        $(".up").css('float', "right");
-      }
-      if(videoData.video_possion == 'bl'){
-        $(".up").css('float', "left");
-      }
-    }
+    // if (videoData.video_possion == 'tr'  || videoData.video_possion == 'tl'){
+    //   $(".down").css('display', "block");
+    //   if(videoData.video_possion == 'tr'){
+    //     $(".down").css('float', "right");
+    //   }
+    //   if(videoData.video_possion == 'tl'){
+    //     $(".down").css('float', "left");
+    //   }
+    // }
+    // if (videoData.video_possion == 'br'  || videoData.video_possion == 'bl'){
+    //   $(".up").css('display', "block");
+    //   if(videoData.video_possion == 'br'){
+    //     $(".up").css('float', "right");
+    //   }
+    //   if(videoData.video_possion == 'bl'){
+    //     $(".up").css('float', "left");
+    //   }
+    // }
     
     if (windowScrollTop > videoBottom) {
       $videoWrap.height(videoHeight);
@@ -51,8 +51,8 @@ jQuery(document).ready(function(){
     }
   });
   
-  $(".btn_close").on('click', function(){
-    $videoWrap.height('auto');
-    $video.addClass('no-stuck').removeClass('stuck');
-  })
+  // $(".btn_close").on('click', function(){
+  //   $videoWrap.height('auto');
+  //   $video.addClass('no-stuck').removeClass('stuck');
+  // })
 })
