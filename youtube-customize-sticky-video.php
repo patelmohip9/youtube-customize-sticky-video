@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Youtube Sticky Video
+ * Plugin Name:       YT Sticky Video
  * Description:       Gutenberg block to adjust sticky video on frontend side.
  * Requires at least: 5.8
  * Requires PHP:      7.0

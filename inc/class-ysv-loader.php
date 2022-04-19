@@ -23,7 +23,9 @@ class YSV_Loader {
 	 */
     public function __construct(){
         add_action( 'init', array($this,'create_block_youtube_customize_sticky_video_block_init') );
-        add_action( 'enqueue_block_assets', array($this,'ysv_block_scripts'), 10 );
+        if ( ! wp_script_is( 'jquery', 'enqueued' )) {
+            add_action( 'enqueue_block_assets', array($this,'ysv_block_scripts'), 10 );
+        }
 	}
 
     /**
