@@ -23,9 +23,7 @@ class YSV_Loader {
 	 */
     public function __construct(){
         add_action( 'init', array($this,'create_block_youtube_customize_sticky_video_block_init') );
-        if ( ! wp_script_is( 'jquery', 'enqueued' )) {
-            add_action( 'enqueue_block_assets', array($this,'ysv_block_scripts'), 10 );
-        }
+        add_action( 'enqueue_block_assets', array($this,'ysv_block_scripts'), 10 );
 	}
 
     /**
@@ -43,22 +41,11 @@ class YSV_Loader {
             is_admin() ? array('wp-editor') : null,
             null
         );
-        
-        if ( ! wp_script_is( 'jquery', 'enqueued' )) {
-            wp_register_script(
-                'ysv-jquery-js',
-                'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js',
-                is_admin() ? array('wp-editor') : null,
-                null,
-                false
-            );
-        }
     
         register_block_type( 
             plugin_dir_path(__DIR__).'/build',
             array(
                 'style'           => 'ysv-style-css',
-                'script'          => 'ysv-jquery-js',
                 'render_callback' => array( $this,'ysv_render_callback' ),
                 'attributes'      => array(
                     'video_id'        => array(
@@ -102,7 +89,7 @@ class YSV_Loader {
         wp_enqueue_script(
             'main-js',
             plugins_url( '/assets/js/main.js', __FILE__ ),
-            [],
+            array('jquery'),
             '',
             true
         );
@@ -111,6 +98,7 @@ class YSV_Loader {
                 'data' => $data,
             )
         );
+        // wp_enqueue_script('jquery');
     }
     
     /**
