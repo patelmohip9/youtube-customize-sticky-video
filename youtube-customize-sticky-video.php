@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       YT Sticky Video
+ * Plugin Name:       Sticky Video for Youtube
  * Description:       Gutenberg block to adjust sticky video on frontend side.
  * Requires at least: 5.8
  * Requires PHP:      7.0
@@ -22,7 +22,7 @@ if ( ! version_compare( PHP_VERSION, '5.0', '>=' ) ) {
 }
 
 /**
- * Youtube sticky video admin notice for minimum PHP version.
+ * Sticky Video for Youtube admin notice for minimum PHP version.
  *
  * Warning when the site doesn't have the minimum required PHP version.
  *
@@ -32,14 +32,14 @@ if ( ! version_compare( PHP_VERSION, '5.0', '>=' ) ) {
  */
 function ysv_fail_php_version() {
 	/* translators: %s: PHP version */
-	$message      = sprintf( esc_html__( 'Youtube sticky video requires PHP version %s+, plugin is currently NOT RUNNING.', 'youtube-sticky-video' ), '5.0' );
+	$message      = sprintf( esc_html__( 'Sticky Video for Youtube requires PHP version %s+, plugin is currently NOT RUNNING.', 'youtube-sticky-video' ), '5.0' );
 	$html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
 	echo wp_kses_post( $html_message );
 }
 
 
 /**
- * Youtube sticky video admin notice for minimum WordPress version.
+ * Sticky Video for Youtube admin notice for minimum WordPress version.
  *
  * Warning when the site doesn't have the minimum required WordPress version.
  *
@@ -49,7 +49,7 @@ function ysv_fail_php_version() {
  */
 function ysv_fail_wp_version() {
 	/* translators: %s: WordPress version */
-	$message      = sprintf( esc_html__( 'Youtube sticky video requires WordPress version %s+. Because you are using an earlier version, the plugin is currently NOT RUNNING.', 'youtube-sticky-video' ), '5.0' );
+	$message      = sprintf( esc_html__( 'Sticky Video for Youtube requires WordPress version %s+. Because you are using an earlier version, the plugin is currently NOT RUNNING.', 'youtube-sticky-video' ), '5.0' );
 	$html_message = sprintf( '<div class="error">%s</div>', wpautop( $message ) );
 	echo wp_kses_post( $html_message );
 }

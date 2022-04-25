@@ -6,7 +6,7 @@ registerBlockType('create-block/youtube-customize-sticky-video', {
 	/**
 	 * @see ./edit.js
 	 */
-	 title: 'Youtube Sticky Video',
+	 title: 'Sticky Video for Youtube',
 	 description: "Gutenberg block to adjust sticky video on frontend side",
 	 icon: 'video-alt3',
 	 apiVersion: 2,
@@ -45,6 +45,7 @@ registerBlockType('create-block/youtube-customize-sticky-video', {
 	/**
 	 * @see ./save.js
 	 */
-	save,
+	save: ( props ) => {
+		return null;
+	},
 });
-true

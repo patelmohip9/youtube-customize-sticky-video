@@ -178,7 +178,7 @@ __webpack_require__.r(__webpack_exports__);
   /**
    * @see ./edit.js
    */
-  title: 'Youtube Sticky Video',
+  title: 'Sticky Video for Youtube',
   description: "Gutenberg block to adjust sticky video on frontend side",
   icon: 'video-alt3',
   apiVersion: 2,
@@ -216,9 +216,10 @@ __webpack_require__.r(__webpack_exports__);
   /**
    * @see ./save.js
    */
-  save
+  save: props => {
+    return null;
+  }
 });
-true;
 
 /***/ }),
 
